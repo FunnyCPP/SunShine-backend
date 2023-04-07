@@ -1,0 +1,11 @@
+#!/bin/sh
+
+docker-compose down
+
+sudo ./mvnw clean package -DskipTests &&
+
+cp target/demo-0.0.1-SNAPSHOT.jar src/main/docker &&
+
+cd src/main/docker &&
+
+docker-compose up -d
