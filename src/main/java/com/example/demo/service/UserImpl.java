@@ -10,7 +10,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 @Service @RequiredArgsConstructor @Transactional @Slf4j
 
-public class UserController implements UserService {
+public class UserImpl implements UserService {
     private final UserRepository userRepository;
 
     @Override
