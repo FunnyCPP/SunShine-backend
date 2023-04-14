@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.List;
 
 @Entity
@@ -17,27 +18,18 @@ import java.util.List;
 @Builder
 @Table(name = " user ")
 
-public class User implements UserService {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private String name;
+    private String Name;
     private String userName;
     private String password;
 
 
-    @Override
-    public User saveUser(User user) {
-        return null;
-    }
 
-    @Override
-    public User getUser(String username) {
-        return null;
-    }
 
-    @Override
-    public List<User> getUsers() {
-        return null;
-    }
+
+
+
 }
