@@ -1,5 +1,6 @@
 package com.example.demo.entity;
 
+import com.example.demo.service.UserDetails;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,24 +16,22 @@ import java.util.Collection;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = " user ")
+@Table(name = "user")
 
-public class User {
+public class User implements UserDetails {
     @Id
-    @Column(name = "user_id", length = 45)
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
+
     private long id;
-
-    @Column(name = "user_name", length = 255)
-    private String Name;
-
-    @Column(name = "userName", length = 255)
-    private String userName;
-
-    @Column(name = "user_password", length = 255)
+    private String firstname;
+    private String lastname;
+    private String email;
     private String password;
 
-
-
+    @Override
+    public Collection<? extends GrantedPermission> getAuthotities() {
+        return null;
+    }
 }
 
