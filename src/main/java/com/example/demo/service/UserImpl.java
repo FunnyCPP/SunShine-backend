@@ -4,11 +4,12 @@ import com.example.demo.entity.User;
 import com.example.demo.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.naming.factory.SendMailFactory;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
+
 @Service @RequiredArgsConstructor @Transactional @Slf4j
 
 public class UserImpl implements UserService {
@@ -23,7 +24,7 @@ public class UserImpl implements UserService {
     }
 
     @Override
-    public User getUser(String email) {
+    public Optional<User> getUser(String email) {
         log.info("Fetching user  ");
         return userRepository.findByEmail(email);
     }
